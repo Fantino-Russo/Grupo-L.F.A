@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 export function CajaText(props: TextProps){
     return(   
-             
+
         <Text {...props} style={[estilos.importante, estilos.caja]}/>
     )
 };
