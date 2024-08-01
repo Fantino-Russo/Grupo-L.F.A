@@ -29,6 +29,7 @@ const headerStyle = StyleSheet.create({
         fontSize: 20,
         fontWeight: "bold",
         fontFamily: "Sans-Serif",
+        position: "relative",
         left: "-50%"
 
     },
