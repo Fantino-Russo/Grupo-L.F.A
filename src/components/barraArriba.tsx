@@ -11,7 +11,9 @@ export default function BarraArriba(){
             </TouchableOpacity>
             
             <Text style={headerStyle.Titulo}>Presente!</Text>
-            <View/>
+            <TouchableOpacity>
+                <Image source={require('@/assets/images/Sidebar.png')} style={headerStyle.Imagen}/>
+            </TouchableOpacity>
         </View>
     );
 }   
@@ -30,7 +32,6 @@ const headerStyle = StyleSheet.create({
         fontWeight: "bold",
         fontFamily: "Sans-Serif",
         position: "relative",
-        left: "-50%"
 
     },
     Imagen:{

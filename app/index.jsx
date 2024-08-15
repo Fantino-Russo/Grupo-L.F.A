@@ -1,8 +1,8 @@
-import { StyleSheet } from 'react-native';
-
+import { StyleSheet, Image } from 'react-native';
+import AlumnoAdd from '@/src/Alumno/components/AlumnoAdd';
 import BarraArriba from '@/src/components/barraArriba';
 import { Text, View } from '@/components/Themed';
-import { Nota } from '@/src/components/nota';
+import CirculoLogo from '@/src/components/circuloLogo';
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
@@ -10,6 +10,10 @@ export default function TabOneScreen() {
       <View style={styles.contenido}>
         <Text style={styles.temporal}>Colocar Aula aca</Text>
       </View>
+      <View style={styles.circulo}>
+       <CirculoLogo />
+       
+      </View>      
     </View>
   );
 }
@@ -30,4 +34,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     
   },
+  circulo:{
+    alignItems: "flex-end"
+  },
+  
+  
 });
