@@ -1,12 +1,12 @@
 
-import {StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {StyleSheet, Image, TouchableOpacity, useWindowDimensions} from 'react-native';
 import {Text, View} from '@/components/Themed';
-import Constants from 'expo-constants';
 
-export default function BarraArriba(){
+export default function BarraArriba({navigation}){
+    
     return(
         <View style={headerStyle.Header}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.openDrawer()}>
                 <Image source={require('@/assets/images/Sidebar.png')} style={headerStyle.Imagen}/>
             </TouchableOpacity>
             
@@ -28,7 +28,7 @@ const headerStyle = StyleSheet.create({
     },
     Titulo:{
         color : "#FFF",
-        fontSize: 20,
+        fontSize: 30,
         fontWeight: "bold",
         fontFamily: "Sans-Serif",
         position: "relative",
