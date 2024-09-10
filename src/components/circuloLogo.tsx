@@ -5,7 +5,6 @@ import Constants from 'expo-constants';
 export default function CirculoLogo(){
     return(
         <View style={CirculoStyle.Circulo}>
-            
             <Image source={require('@/assets/images/LogoPresentex3Blanco.png')} style={CirculoStyle.Imagen}/>
         </View>
     );

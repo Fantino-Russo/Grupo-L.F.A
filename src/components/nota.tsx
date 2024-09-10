@@ -6,6 +6,7 @@ type Props = {
 export function Nota({puntos} : Props){
     return(
         <Text style={notaStyle.puntajeAlto}>Su nota es de {puntos}</Text>
+        
     );
 }
 

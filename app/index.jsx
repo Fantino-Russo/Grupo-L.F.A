@@ -2,33 +2,26 @@ import { StyleSheet, Image } from 'react-native';
 import BarraArriba from '@/src/components/barraArriba';
 import { Text, View } from '@/components/Themed';
 import CirculoLogo from '@/src/components/circuloLogo';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer'; 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import {DrawerPersonalizado} from '@/src/components/drawerPersonalizado';
 import ClaseEjemplo from '@/src/components/claseEjemplo'
+import PrincipalScreen from '@/src/screens/principal'
+import LoginScreen from '@/src/components/login'
 const Drawer = createDrawerNavigator();
 
 function Principal({navigation}) {
   return (
     
-    <View style={styles.container}>
-      <Text style={styles.titulo}>Mis clases: </Text>
-      <View style={styles.contenido}>
-  
-        <ClaseEjemplo style={styles.aulas} navigation={navigation}/>
-      </View>
-      <View style={styles.circulo}>
-      <CirculoLogo />
-      </View>      
-   </View>
+    <PrincipalScreen navigation={navigation}></PrincipalScreen>
   );
 }
 
 function AulaScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Aula 1</Text>
-    </View>
+    
+      <LoginScreen></LoginScreen>
+    
   );
 }
 

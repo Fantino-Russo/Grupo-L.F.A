@@ -2,7 +2,7 @@ import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Text, View } from '@/components/Themed';
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function ClaseEjemplo({ navigation }) {  // Desestructurar navigation desde props
+export default function ClaseEjemplo({ navigation }) {  
     return (
         <TouchableOpacity onPress={() => navigation.navigate('AulaScreen')}>
             <View style={aulaStyle.contenedor}>

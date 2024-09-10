@@ -9,8 +9,11 @@ export default function BarraArriba({navigation}){
             <TouchableOpacity onPress={() => navigation.openDrawer()}>
                 <Image source={require('@/assets/images/Sidebar.png')} style={headerStyle.Imagen}/>
             </TouchableOpacity>
+            <View style={headerStyle.TituloContenedor}>
+                <Text style={headerStyle.Titulo}>Presente!</Text>
+                <Image source={require('@/assets/images/LogoPresentee.png')} style={headerStyle.ImagenLogo}/>
+            </View>
             
-            <Text style={headerStyle.Titulo}>Presente!</Text>
             <TouchableOpacity>
                 <Image source={require('@/assets/images/Sidebar.png')} style={headerStyle.Imagen}/>
             </TouchableOpacity>
@@ -26,6 +29,10 @@ const headerStyle = StyleSheet.create({
         justifyContent: "space-between"
         
     },
+    TituloContenedor:{
+        backgroundColor: "#2C4B9A",
+        flexDirection: "row",
+    },
     Titulo:{
         color : "#FFF",
         fontSize: 30,
@@ -37,6 +44,12 @@ const headerStyle = StyleSheet.create({
     Imagen:{
         width: 30,
         height: 30,
+        
+    },
+    ImagenLogo:{
+        width: 30,
+        height: 50,
+        bottom: 10
     }
 }
 );

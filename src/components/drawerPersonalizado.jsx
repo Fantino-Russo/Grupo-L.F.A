@@ -17,7 +17,7 @@ export function DrawerPersonalizado(props) {
         />
         <View style={styles.separador}></View>
         <DrawerItem
-            label="Aula 1"
+            label="Login test"
             onPress={() => props.navigation.navigate('AulaScreen')}
         />
         
