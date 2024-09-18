@@ -1,11 +1,8 @@
 import { StyleSheet, Image } from 'react-native';
 import BarraArriba from '@/src/components/barraArriba';
-import { Text, View } from '@/components/Themed';
-import CirculoLogo from '@/src/components/circuloLogo';
 import { createDrawerNavigator } from '@react-navigation/drawer'; 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import {DrawerPersonalizado} from '@/src/components/drawerPersonalizado';
-import ClaseEjemplo from '@/src/components/claseEjemplo'
 import PrincipalScreen from '@/src/screens/principal'
 import LoginScreen from '@/src/components/login'
 const Drawer = createDrawerNavigator();

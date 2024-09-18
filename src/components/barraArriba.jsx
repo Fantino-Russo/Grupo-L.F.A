@@ -11,7 +11,7 @@ export default function BarraArriba({navigation}){
             </TouchableOpacity>
             <View style={headerStyle.TituloContenedor}>
                 <Text style={headerStyle.Titulo}>Presente!</Text>
-                <Image source={require('@/assets/images/LogoPresentee.png')} style={headerStyle.ImagenLogo}/>
+                {/* <Image source={require('@/assets/images/LogoPresentee.png')} style={headerStyle.ImagenLogo}/> */}
             </View>
             
             <TouchableOpacity>
