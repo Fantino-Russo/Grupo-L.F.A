@@ -1,10 +1,11 @@
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 import BarraArriba from '@/src/components/barraArriba';
 import { createDrawerNavigator } from '@react-navigation/drawer'; 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import {DrawerPersonalizado} from '@/src/components/drawerPersonalizado';
 import PrincipalScreen from '@/src/screens/principal'
 import LoginScreen from '@/src/components/login'
+import BotonNovedades from '@/src/components/Novedades'
 const Drawer = createDrawerNavigator();
 
 function Principal({navigation}) {
@@ -16,8 +17,12 @@ function Principal({navigation}) {
 
 function AulaScreen() {
   return (
-    
+    <View>
       <LoginScreen></LoginScreen>
+      <BotonNovedades>
+
+      </BotonNovedades>
+    </View>
     
   );
 }
