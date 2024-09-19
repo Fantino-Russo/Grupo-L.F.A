@@ -6,6 +6,8 @@ import {DrawerPersonalizado} from '@/src/components/drawerPersonalizado';
 import PrincipalScreen from '@/src/screens/principal'
 import LoginScreen from '@/src/components/login'
 import BotonNovedades from '@/src/components/Novedades'
+import Aula from '@/src/screens/Aula'
+import PantallaSinLogin from '@/src/screens/PrincipalSinLogin'
 const Drawer = createDrawerNavigator();
 
 function Principal({navigation}) {
@@ -17,14 +19,15 @@ function Principal({navigation}) {
 
 function AulaScreen() {
   return (
-    <View>
-      <LoginScreen></LoginScreen>
-      <BotonNovedades>
-
-      </BotonNovedades>
-    </View>
+    <Aula></Aula>
     
   );
+}
+function PantallaLogOff(){
+  return(
+    <PantallaSinLogin></PantallaSinLogin>
+  );
+  
 }
 
 export default function TabOneScreen() {
@@ -44,6 +47,13 @@ export default function TabOneScreen() {
           <Drawer.Screen
             name="AulaScreen"
             component={AulaScreen}
+            options={({ navigation }) => ({
+              header: () => <BarraArriba navigation={navigation} />,
+            })}
+          />
+          <Drawer.Screen
+            name="Screen sin login"
+            component={PantallaLogOff}
             options={({ navigation }) => ({
               header: () => <BarraArriba navigation={navigation} />,
             })}

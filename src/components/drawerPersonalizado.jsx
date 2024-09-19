@@ -20,7 +20,10 @@ export function DrawerPersonalizado(props) {
             label="Login test"
             onPress={() => props.navigation.navigate('AulaScreen')}
         />
-        
+        <DrawerItem
+            label="Pantalla Sin login"
+            onPress={() => props.navigation.navigate('Screen sin login')}
+        />
         </DrawerContentScrollView>
     );
 }
