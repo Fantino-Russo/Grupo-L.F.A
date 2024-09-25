@@ -16,7 +16,7 @@ function Principal({ navigation }) {
 }
 
 function AulaScreen() {
-  return <LoginScreen />;
+  return <Aula />;
 }
 
 function PantallaLogOff() {

@@ -1,31 +1,33 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image, View, Text, StyleSheet } from 'react-native';
-
+import AsistenciasScreen from '@/src/screens/AsistenciasScreen'
+import NovedadesScreen from '@/src/screens/NovedadesScreen'
+import MiQRScreen from '@/src/screens/MiQRScreen'
 // Crear un Tab Navigator
 const Tab = createBottomTabNavigator();
 
-// Componente de ejemplo para cada tab
-function Screen1() {
+
+function Novedades() {
   return (
     <View style={styles.screenContainer}>
-      <Text>Página 1</Text>
+      <NovedadesScreen></NovedadesScreen>
     </View>
   );
 }
 
-function Screen2() {
+function Asistencias() {
   return (
     <View style={styles.screenContainer}>
-      <Text>Página 2</Text>
+      <AsistenciasScreen></AsistenciasScreen>
     </View>
   );
 }
 
-function Screen3() {
+function MiQR() {
   return (
-    <View style={styles.screenContainer}>
-      <Text>Página 3</Text>
+    <View style={styles.QRContainer}>
+      <MiQRScreen></MiQRScreen>
     </View>
   );
 }
@@ -37,12 +39,12 @@ export default function Aula() {
         tabBarStyle: { backgroundColor: '#142758', height: 75 }, // Estilo del fondo de las tabs
         tabBarActiveTintColor: '#FFF',  // Color del ícono activo
         tabBarInactiveTintColor: '#000000', // Color del ícono inactivo
-        tabBarLabelStyle: { display: 'none' }, 
+        tabBarLabelStyle: { display: 'none' },
       }}
     >
       <Tab.Screen
         name="Novedades de la clase"
-        component={Screen1}
+        component={Novedades}
         options={{
           tabBarIcon: ({ focused, color }) => (
             <View style={styles.iconContainer}>
@@ -58,7 +60,7 @@ export default function Aula() {
       {/* ASISTENCIAS ACA */}
       <Tab.Screen
         name="Mis asistencias"
-        component={Screen2}
+        component={Asistencias}
         options={{
           tabBarIcon: ({ focused, color }) => (
             <View style={styles.iconContainer}>
@@ -74,7 +76,7 @@ export default function Aula() {
       {/* QR ACA */}
       <Tab.Screen
         name="Mi QR"
-        component={Screen3}
+        component={MiQR}
         options={{
           tabBarIcon: ({ focused, color }) => (
             <View style={styles.iconContainer}>
@@ -94,7 +96,14 @@ export default function Aula() {
 const styles = StyleSheet.create({
   screenContainer: {
     flex: 1,
+    // justifyContent: 'center',
+    marginTop: 20,
+    alignItems: 'center',
+  },
+  QRContainer: {
+    flex: 1,
     justifyContent: 'center',
+    marginTop: 20,
     alignItems: 'center',
   },
   iconContainer: {
