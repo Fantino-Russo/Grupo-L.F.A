@@ -45,7 +45,7 @@ export default function LoginFormulario() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    // padding: 20,
     marginTop: 50,
   },
   input: {

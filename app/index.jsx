@@ -8,7 +8,7 @@ import PrincipalScreen from '@/src/screens/principal';
 import Aula from '@/src/screens/Aula';
 import PantallaSinLogin from '@/src/screens/PrincipalSinLogin';
 import UnirseFormulario from '@/src/components/FormUnirseClase';
-
+import LoginScreen from '@/src/screens/LoginScreen';
 const Drawer = createDrawerNavigator();
 
 function Principal({ navigation }) {
@@ -16,7 +16,7 @@ function Principal({ navigation }) {
 }
 
 function AulaScreen() {
-  return <Aula />;
+  return <LoginScreen />;
 }
 
 function PantallaLogOff() {
