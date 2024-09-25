@@ -1,11 +1,9 @@
 import {Text, TextProps} from '@/components/Themed';
 import { StyleSheet } from 'react-native';
-type Props = {
-    usuario: string;
-};
-export function Bienvenido({usuario} : Props){
+export function Bienvenido(){
     return(
-        <Text style={bienvenidaStyles.titulo}>Bienvenido {usuario}</Text>
+        <Text style={bienvenidaStyles.titulo}>Bienvenido</Text>
+        
     );
 }
 

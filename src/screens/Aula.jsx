@@ -36,7 +36,7 @@ export default function Aula() {
       screenOptions={{
         tabBarStyle: { backgroundColor: '#142758', height: 75 }, // Estilo del fondo de las tabs
         tabBarActiveTintColor: '#FFF',  // Color del ícono activo
-        tabBarInactiveTintColor: '#0d002d', // Color del ícono inactivo
+        tabBarInactiveTintColor: '#000000', // Color del ícono inactivo
         tabBarLabelStyle: { display: 'none' }, 
       }}
     >

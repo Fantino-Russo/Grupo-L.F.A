@@ -3,7 +3,7 @@ import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 import { auth } from '@/firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-export default function RegistroScreen() {
+export default function RegistroFormulario() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
