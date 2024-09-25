@@ -41,7 +41,7 @@ export default function Aula() {
       }}
     >
       <Tab.Screen
-        name="Tab1"
+        name="Novedades de la clase"
         component={Screen1}
         options={{
           tabBarIcon: ({ focused, color }) => (
@@ -57,7 +57,7 @@ export default function Aula() {
       />
       {/* ASISTENCIAS ACA */}
       <Tab.Screen
-        name="Tab2"
+        name="Mis asistencias"
         component={Screen2}
         options={{
           tabBarIcon: ({ focused, color }) => (
@@ -73,7 +73,7 @@ export default function Aula() {
       />
       {/* QR ACA */}
       <Tab.Screen
-        name="Tab3"
+        name="Mi QR"
         component={Screen3}
         options={{
           tabBarIcon: ({ focused, color }) => (
