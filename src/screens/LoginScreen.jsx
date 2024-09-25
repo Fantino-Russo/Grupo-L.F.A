@@ -4,7 +4,7 @@ import TextoForm from "../components/textoFormularios";
 import CirculoSuperior from "../components/CirculoSuperior";
 import CirculoLogo from "../components/circuloLogo";
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
   return (
     <View style={styles.screenContainer}>
       <CirculoSuperior />
@@ -15,7 +15,7 @@ export default function LoginScreen() {
             <Text style={styles.instruccion}>Inicie Sesion</Text>
             <Text style={styles.instruccion}>Ingrese su mail y contraseña para ingresar</Text>
           </View>
-          <LoginFormulario />
+          <LoginFormulario navigation={navigation}/>
         </View>
       </View>
       <View style={styles.logoContainer}>
@@ -27,14 +27,14 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   screenContainer: {
-    flex: 1, // Para que el View ocupe toda la pantalla
-    justifyContent: 'space-between', // Espacio entre el contenido y el logo
+    flex: 1, 
+    justifyContent: 'space-between', 
   },
   container: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    flexGrow: 1, // Ocupar el espacio disponible
+    flexGrow: 1, 
   },
   contentContainer: {
     alignItems: 'center',
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   logoContainer: {
-    alignSelf: 'flex-end', // Alinear el logo a la derecha
+    alignSelf: 'flex-end', 
    
   },
 });

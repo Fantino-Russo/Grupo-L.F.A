@@ -36,9 +36,9 @@ export default function Aula() {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: { backgroundColor: '#142758', height: 75 }, // Estilo del fondo de las tabs
-        tabBarActiveTintColor: '#FFF',  // Color del ícono activo
-        tabBarInactiveTintColor: '#000000', // Color del ícono inactivo
+        tabBarStyle: { backgroundColor: '#142758', height: 75 }, 
+        tabBarActiveTintColor: '#FFF',  
+        tabBarInactiveTintColor: '#4f4f4f', 
         tabBarLabelStyle: { display: 'none' },
       }}
     >
@@ -110,13 +110,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 10, // Espacio vertical adicional
-    paddingHorizontal: 20, // Espacio horizontal adicional
+    paddingVertical: 10, 
+    paddingHorizontal: 20, 
   },
   
   label: {
-    fontSize: 14, // Tamaño del texto
-    marginTop: 4, // Espacio entre el ícono y el texto
+    fontSize: 14, 
+    marginTop: 4, 
     paddingHorizontal: 5
   },
 });

@@ -1,62 +1,75 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
-import { auth } from '@/firebase';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { View, Button, TextInput, Text, StyleSheet } from 'react-native';
 
-export default function LoginFormulario() {
+// import { auth } from '@/firebase';
+
+export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
 
-  const manejoLogin = () => {
-   
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("LOGIN correcto");
-        
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
+  //Usare despues, el codigo es funcional, pero no tengo idea de como autenticar en cada pagina despues
+  // const handleLogin = () => {
+  //   auth.signInWithEmailAndPassword(email, password)
+  //     .then((userCredential) => {
+  //       
+  //       navigation.replace('AppDrawer');
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //       alert('Error al iniciar sesión');
+  //     });
+  // };
+
+  // Por ahora navega a la pantalla principal
+  const handleLogin = () => {
+    navigation.replace('AppDrawer');
   };
 
   return (
     <View style={styles.container}>
+      
+      
       <TextInput
+        style={styles.input}
         placeholder="Email"
         value={email}
-        onChangeText={setEmail}
+        onChangeText={(text) => setEmail(text)}
         keyboardType="email-address"
-        style={styles.input}
       />
+      
       <TextInput
+        style={styles.input}
         placeholder="Contraseña"
         value={password}
-        onChangeText={setPassword}
+        onChangeText={(text) => setPassword(text)}
         secureTextEntry
-        style={styles.input}
       />
-      {error ? <Text style={styles.error}>{error}</Text> : null}
-      <Button title="Iniciar sesión" onPress={manejoLogin} />
+
+      {/* Boton login que por ahora solo navega al Drawer */}
+      <Button title="Login" onPress={handleLogin} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    // padding: 20,
-    marginTop: 50,
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    textAlign: 'center',
   },
   input: {
-    marginVertical: 10,
-    padding: 10,
-    borderWidth: 1,
+    height: 40,
     borderColor: '#ccc',
-    borderRadius: 5,
-  },
-  error: {
-    color: 'red',
-    marginBottom: 10,
+    borderWidth: 1,
+    marginBottom: 12,
+    paddingHorizontal: 8,
+    borderRadius: 4,
+    margin: 10
   },
 });

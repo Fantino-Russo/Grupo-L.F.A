@@ -26,10 +26,7 @@ export function DrawerPersonalizado(props) {
         label="Aula Template"
         onPress={() => props.navigation.navigate('AulaScreen')}
       />
-      <DrawerItem
-        label="Pantalla Sin login"
-        onPress={() => props.navigation.navigate('Screen sin login')}
-      />
+      
     </DrawerContentScrollView>
   );
 }
