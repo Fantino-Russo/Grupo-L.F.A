@@ -1,8 +1,8 @@
 import { StyleSheet, View, Text } from "react-native";
 import RegistroFormulario from "../components/Registro";
-import TextoForm from "../components/textoFormularios";
+import TextoForm from "../components/TextoFormularios";
 import CirculoSuperior from "../components/CirculoSuperior";
-import CirculoLogo from "../components/circuloLogo";
+import CirculoLogo from "../components/CirculoLogo";
 
 export default function RegistroScreen({ navigation }) {
   return (

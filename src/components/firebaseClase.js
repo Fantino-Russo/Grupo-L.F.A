@@ -1,3 +1,4 @@
+//codigo copiado en clase, no se usa
 const {firestore} = this.props;
 
 const ref = firestore.collection("/venta")

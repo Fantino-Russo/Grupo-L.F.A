@@ -1,8 +1,8 @@
 import { StyleSheet, View, Text } from "react-native";
-import LoginFormulario from "../components/login";
-import TextoForm from "../components/textoFormularios";
+import LoginFormulario from "../components/Login";
+import TextoForm from "../components/TextoFormularios";
 import CirculoSuperior from "../components/CirculoSuperior";
-import CirculoLogo from "../components/circuloLogo";
+import CirculoLogo from "../components/CirculoLogo";
 
 export default function LoginScreen({navigation}) {
   return (

@@ -1,5 +1,5 @@
 import { StyleSheet, View, Text } from "react-native";
-import TextoForm from "../components/textoFormularios";
+import TextoForm from "../components/TextoFormularios";
 export default function NovedadesScreen(){
     return(
         <View>

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import BarraArriba from '@/src/components/barraArriba';
+import BarraArriba from '@/src/components/BarraArriba';
 import { createDrawerNavigator } from '@react-navigation/drawer'; 
 import { createStackNavigator } from '@react-navigation/stack'; 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { DrawerPersonalizado } from '@/src/components/drawerPersonalizado';
-import PrincipalScreen from '@/src/screens/principal';
+import { DrawerPersonalizado } from '@/src/components/DrawerPersonalizado';
+import PrincipalScreen from '@/src/screens/Principal';
 import Aula from '@/src/screens/Aula';
 import SeleccionarAccionScreen from '@/src/screens/PrincipalSinLogin';
 import UnirseFormulario from '@/src/components/FormUnirseClase';

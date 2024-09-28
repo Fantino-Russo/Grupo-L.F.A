@@ -1,3 +1,4 @@
+//Codigo copiado en clase, no se usa
 import React from "react";
 import { View, Button, StyleSheet, Text } from "react-native";
 import { Formik } from "formik";
