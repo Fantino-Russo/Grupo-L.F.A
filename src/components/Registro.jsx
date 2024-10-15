@@ -1,32 +1,31 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
-// import { auth } from '@/firebase';
-// import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '@/firebase';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function RegistroFormulario({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  // const manejoRegistro = () => {
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       const user = userCredential.user;
-  //       console.log("Registro exitoso:", user);
-  //      
-  //     })
-  //     .catch((err) => {
-  //       setError(err.message);
-  //     });
-  // }
+  const handleRegistro = () => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        navigation.navigate('AppDrawer')
+       
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
+  }
   
-    // Función que maneja el registro
-    const handleRegister = () => {
+    // // Función que maneja el registro
+    // const handleRegister = () => {
       
       
-      navigation.replace('AppDrawer');
+    //   navigation.navigate('AppDrawer');
      
-    };
+    // };
   
     return (
       <View style={styles.container}>
@@ -44,8 +43,9 @@ export default function RegistroFormulario({navigation}) {
           onChangeText={(text) => setPassword(text)}
           secureTextEntry
         />
-        {/* Boton de registro que por ahora solo navega al Drawer */}
-        <Button title="Registrar" onPress={handleRegister} />
+        {/* Boton de registro que pora hora solo navega al Drawer */}
+        {error ? <Text style={styles.error}>{error}</Text> : null}
+        <Button title="Registrar" onPress={handleRegistro} />
       </View>
     );
   }
@@ -65,4 +65,7 @@ export default function RegistroFormulario({navigation}) {
       borderRadius: 4,
       margin: 10,
     },
+    error:{
+      color: "red",
+    }
   });

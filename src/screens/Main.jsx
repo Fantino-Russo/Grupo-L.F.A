@@ -23,9 +23,6 @@ function AulaScreen() {
   return <Aula />;
 }
 
-function PantallaLogOff() {
-  return <Prin />;
-}
 
 export default function Main() {
   const [modalVisible, setModalVisible] = useState(false);
