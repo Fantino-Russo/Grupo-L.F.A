@@ -78,9 +78,8 @@
 //     color: "red",
 //   }
 // });
-
 import React, { useState } from 'react';
-import { View, Button, TextInput, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, TextInput, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 import * as Google from 'expo-auth-session/providers/google';
 import { auth } from '@/firebase';
@@ -116,8 +115,7 @@ export default function LoginScreen({ navigation }) {
 
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        
+      .then(() => {
         navigation.navigate('AppDrawer');
       })
       .catch((error) => {
@@ -142,24 +140,29 @@ export default function LoginScreen({ navigation }) {
         secureTextEntry
       />
       {error ? <Text style={styles.error}>{error}</Text> : null}
-      <Button title="Login" onPress={handleLogin} />
+      
+      {/* Botón de inicio de sesión estilizado */}
+      <TouchableOpacity
+        style={styles.loginButton}
+        onPress={handleLogin}
+        activeOpacity={0.7}
+      >
+        <Text style={styles.loginButtonText}>Iniciar Sesión</Text>
+      </TouchableOpacity>
 
       {/* Botón para iniciar sesión con Google */}
-     
-      <TouchableOpacity disabled={!request}
-        onPress={() => promptAsync()}>
+      <TouchableOpacity disabled={!request} onPress={() => promptAsync()}>
         <View style={styles.google}>
-          <Image source={require('@/assets/images/logoGoogle.png')} style={styles.imagenGoogle}></Image>
-          <Text style={styles.googleTexto}>Iniciar sesion con Google</Text>
+          <Image source={require('@/assets/images/logoGoogle.png')} style={styles.imagenGoogle} />
+          <Text style={styles.googleTexto}>Iniciar sesión con Google</Text>
         </View>
-
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  google:{
+  google: {
     borderColor: '#ccc',
     borderWidth: 1,
     borderRadius: 8,
@@ -170,22 +173,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
   },
-  googleTexto:{
+
+  googleTexto: {
     textAlign: 'center',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
   },
-  imagenGoogle:{
+
+  imagenGoogle: {
     height: 23,
     width: 22,
     marginHorizontal: 10,
-    
   },
+
   container: {
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 20,
   },
+
   input: {
     height: 40,
     borderColor: '#ccc',
@@ -194,7 +200,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     borderRadius: 4,
   },
-  error: {
-    color: 'red',
+ 
+  loginButton: {
+    backgroundColor: '#007BFF', 
+    borderRadius: 5,
+    padding: 15,
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+  
+  loginButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
