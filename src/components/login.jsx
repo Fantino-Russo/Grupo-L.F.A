@@ -145,16 +145,14 @@ export default function LoginScreen({ navigation }) {
       <Button title="Login" onPress={handleLogin} />
 
       {/* Botón para iniciar sesión con Google */}
-      <Button
-        title="Login con Google"
-        disabled={!request}
-        onPress={() => promptAsync()}
-      />
-      <TouchableOpacity>
+     
+      <TouchableOpacity disabled={!request}
+        onPress={() => promptAsync()}>
         <View style={styles.google}>
           <Image source={require('@/assets/images/logoGoogle.png')} style={styles.imagenGoogle}></Image>
           <Text style={styles.googleTexto}>Iniciar sesion con Google</Text>
         </View>
+
       </TouchableOpacity>
     </View>
   );
