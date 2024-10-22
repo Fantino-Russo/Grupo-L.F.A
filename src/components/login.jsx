@@ -11,6 +11,8 @@
 //   const handleLogin = () => {
 //     signInWithEmailAndPassword(auth, email, password)
 //       .then((userCredential) => {
+  6
+  
         
 //         navigation.navigate('AppDrawer');
 //       })
@@ -78,7 +80,7 @@
 // });
 
 import React, { useState } from 'react';
-import { View, Button, TextInput, Text, StyleSheet } from 'react-native';
+import { View, Button, TextInput, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 import * as Google from 'expo-auth-session/providers/google';
 import { auth } from '@/firebase';
@@ -148,11 +150,39 @@ export default function LoginScreen({ navigation }) {
         disabled={!request}
         onPress={() => promptAsync()}
       />
+      <TouchableOpacity>
+        <View style={styles.google}>
+          <Image source={require('@/assets/images/logoGoogle.png')} style={styles.imagenGoogle}></Image>
+          <Text style={styles.googleTexto}>Iniciar sesion con Google</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  google:{
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 8,
+    height: 40,
+    marginVertical: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  googleTexto:{
+    textAlign: 'center',
+    fontFamily: 'Roboto',
+    fontWeight: 'bold',
+  },
+  imagenGoogle:{
+    height: 23,
+    width: 22,
+    marginHorizontal: 10,
+    
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
