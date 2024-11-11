@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Modal, TouchableOpacity, TextInput, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-export default function UnirseFormulario({ modalVisible, setModalVisible }) {
+export default function CrearClaseFormulario({ modalVisible, setModalVisible }) {
   return (
     <Modal
       animationType="slide"
