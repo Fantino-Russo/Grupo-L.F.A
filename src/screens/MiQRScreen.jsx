@@ -1,29 +1,49 @@
+import React, { useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import QRCode from 'react-native-qrcode-svg';
 
-export default function MiQRScreen(){
-    return(
-        <TouchableOpacity style={styles.boton}>
-            <Text style={styles.botonText}>Generar QR</Text>
-        </TouchableOpacity>
-    );
+export default function MiQRScreen() {
+  const [qrValue, setQrValue] = useState(""); 
+ 
+  const handleGenerarQR = () => {
+    setQrValue(user.id); 
+  };
+
+  return (
+    <View style={styles.container}>
+      {}
+      <TouchableOpacity style={styles.boton} onPress={handleGenerarQR}>
+        <Text style={styles.botonText}>Generar QR</Text>
+      </TouchableOpacity>
+
+      {}
+      {qrValue ? (
+        <QRCode value={qrValue} size={200} style={styles.qr} />
+      ) : null}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    
-    boton:{
-        backgroundColor: '#030392',
-        width: 250,
-        height: 40,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 5,
-        
-        
-    },
-    
-    botonText:{
-        color: '#FFFFFF',
-        fontWeight: 'bold'
-    },
-})
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  boton: {
+    backgroundColor: '#030392',
+    width: 250,
+    height: 40,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+  },
+  botonText: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+  },
+  qr: {
+    marginTop: 20,
+  }
+});
