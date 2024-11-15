@@ -2,7 +2,17 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { Ionicons } from '@expo/vector-icons';
+import { signOut } from 'firebase/auth';
+import { auth } from '@/firebase';
 
+const handleLogout = async () => {
+  try {
+    await signOut(auth); // Cierra la sesión
+    console.log('Sesión cerrada correctamente');
+  } catch (error) {
+    console.error('Error al cerrar sesión: ', error);
+  }
+};
 export function DrawerPersonalizado(props) {
   const { styles } = useStyle();
 
@@ -20,6 +30,11 @@ export function DrawerPersonalizado(props) {
         label="Unirte a un aula"
         onPress={() => props.setModalVisible(true)} // Se abre el modal en lugar de navegar
         icon={() => <Ionicons name="add-circle-sharp" size={20} color="#2C4B9A" />}
+      />
+      <DrawerItem
+        label="Cerrar sesión"
+        onPress={handleLogout} // Se abre el modal en lugar de navegar
+        icon={() => <Ionicons name="log-out" size={22} color="#2C4B9A" style={{paddingLeft: 2}}/>}
       />
       <View style={styles.separador}></View>
       <DrawerItem
