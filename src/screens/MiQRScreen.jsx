@@ -6,7 +6,7 @@ export default function MiQRScreen() {
   const [qrValue, setQrValue] = useState(""); 
  
   const handleGenerarQR = () => {
-    setQrValue(user.id); 
+    setQrValue("TEST EN MOBILE"); 
   };
 
   return (

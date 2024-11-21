@@ -79,7 +79,7 @@
 //   }
 // });
 import React, { useState } from 'react';
-import { View, TextInput, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, TextInput, Text, StyleSheet, TouchableOpacity, Image, Platform } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 import * as Google from 'expo-auth-session/providers/google';
 import { auth } from '@/firebase';
@@ -151,12 +151,14 @@ export default function LoginScreen({ navigation }) {
       </TouchableOpacity>
 
       {/* Botón para iniciar sesión con Google */}
-      <TouchableOpacity disabled={!request} onPress={() => promptAsync()}>
-        <View style={styles.google}>
-          <Image source={require('@/assets/images/logoGoogle.png')} style={styles.imagenGoogle} />
-          <Text style={styles.googleTexto}>Iniciar sesión con Google</Text>
-        </View>
-      </TouchableOpacity>
+      {Platform.OS === 'web' && (
+        <TouchableOpacity disabled={!request} onPress={() => promptAsync()}>
+          <View style={styles.google}>
+            <Image source={require('@/assets/images/logoGoogle.png')} style={styles.imagenGoogle} />
+            <Text style={styles.googleTexto}>Iniciar sesión con Google</Text>
+          </View>
+        </TouchableOpacity>
+      )}
     </View>
   );
 }
@@ -166,7 +168,7 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderWidth: 1,
     borderRadius: 8,
-    height: 40,
+    height: 50,
     marginVertical: 10,
     display: 'flex',
     justifyContent: 'center',
@@ -176,18 +178,19 @@ const styles = StyleSheet.create({
 
   googleTexto: {
     textAlign: 'center',
-    fontFamily: 'Roboto',
+    fontFamily: 'arial',
     fontWeight: 'bold',
   },
 
   imagenGoogle: {
     height: 23,
-    width: 22,
+    width: 23,
     marginHorizontal: 10,
   },
 
   container: {
     flex: 1,
+    
     justifyContent: 'center',
     paddingHorizontal: 20,
   },
@@ -204,12 +207,13 @@ const styles = StyleSheet.create({
   loginButton: {
     backgroundColor: '#007BFF', 
     borderRadius: 5,
-    padding: 15,
+    height: 50,
     alignItems: 'center',
     marginVertical: 10,
   },
   
   loginButtonText: {
+    padding: 15,
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
