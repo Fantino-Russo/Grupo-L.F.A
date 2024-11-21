@@ -1,6 +1,6 @@
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, Text, View} from 'react-native';
 import BarraArriba from '@/src/components/BarraArriba';
-import { Text, View } from '@/components/Themed';
+
 import CirculoLogo from '@/src/components/CirculoLogo';
 import ClaseEjemplo from '@/src/components/ClaseEjemplo'
 export default function PrincipalScreen({navigation}) {

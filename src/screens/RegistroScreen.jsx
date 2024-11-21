@@ -9,8 +9,8 @@ export default function RegistroScreen({ navigation }) {
     <View style={styles.screenContainer}>
       <CirculoSuperior />
       <View style={styles.container}>
-        <View style={{ width: 500 }}>
-          <View style={styles.contentContainer}>
+        <View style={{ width: "80%"}}>
+          <View style={styles.contentContainer }>
             <TextoForm style={styles.texto}>Bienvenido a Presente!</TextoForm>
             <Text style={styles.instruccion}>Cree su cuenta</Text>
             <Text style={styles.instruccion}>Ingrese su mail y contraseña para Registrarse</Text>
@@ -39,6 +39,8 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     alignItems: 'center',
+    marginBottom: 100,
+   
   },
   texto: {
     textAlign: 'center',

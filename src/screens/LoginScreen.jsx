@@ -15,7 +15,7 @@ export default function LoginScreen({navigation}) {
             <Text style={styles.instruccion}>Inicie Sesion</Text>
             <Text style={styles.instruccion}>Ingrese su mail y contraseña para ingresar</Text>
           </View>
-          <View style={{ marginTop: 70}}>
+          <View style={{ marginTop: 100}}>
             <LoginFormulario navigation={navigation} />
           </View>
           

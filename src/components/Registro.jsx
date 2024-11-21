@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { auth } from '@/firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
@@ -45,7 +45,13 @@ export default function RegistroFormulario({navigation}) {
         />
         {/* Boton de registro que pora hora solo navega al Drawer */}
         {error ? <Text style={styles.error}>{error}</Text> : null}
-        <Button title="Registrar" onPress={handleRegistro} />
+          <TouchableOpacity
+          style={styles.loginButton}
+          onPress={handleRegistro}
+          activeOpacity={0.7}
+          >
+            <Text style={styles.loginButtonText}>Iniciar Sesión</Text>
+          </TouchableOpacity>
       </View>
     );
   }
@@ -55,6 +61,7 @@ export default function RegistroFormulario({navigation}) {
       flex: 1,
       justifyContent: 'center',
       paddingHorizontal: 20,
+      marginBottom: 100,
     },
     input: {
       height: 40,
@@ -64,8 +71,23 @@ export default function RegistroFormulario({navigation}) {
       paddingHorizontal: 8,
       borderRadius: 4,
       margin: 10,
+      
     },
     error:{
       color: "red",
-    }
+    },
+    loginButton: {
+      backgroundColor: '#007BFF', 
+      borderRadius: 5,
+      height: 50,
+      alignItems: 'center',
+      marginVertical: 10,
+    },
+    
+    loginButtonText: {
+      padding: 15,
+      color: 'white',
+      fontSize: 16,
+      fontWeight: 'bold',
+    },
   });

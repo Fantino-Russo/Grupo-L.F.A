@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import QRCode from 'react-native-qrcode-svg';
-
+import { getAuth } from "firebase/auth";
 export default function MiQRScreen() {
   const [qrValue, setQrValue] = useState(""); 
  
   const handleGenerarQR = () => {
-    setQrValue("TEST EN MOBILE"); 
+    const auth = getAuth();
+    const user = auth.currentUser;
+    setQrValue(user.email); 
   };
 
   return (
@@ -46,4 +48,4 @@ const styles = StyleSheet.create({
   qr: {
     marginTop: 20,
   }
-});
+}); 
