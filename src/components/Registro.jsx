@@ -61,7 +61,7 @@ export default function RegistroFormulario({navigation}) {
       flex: 1,
       justifyContent: 'center',
       paddingHorizontal: 20,
-      marginBottom: 100,
+      
     },
     input: {
       height: 40,
